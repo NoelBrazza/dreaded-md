@@ -99,7 +99,7 @@ for (const categor of commandCategories) {
 
 
    // do not leave the prefix string empty
-const antiviewonce = process.env.ANTIVIEWONCE || 'TRUE';
+const antiviewonce = process.env.ANTIVIEWONCE || 'FALSE';
 const video = await fs.readFileSync('./menu.mp4');
 const pict = await fs.readFileSync('./dreaded.jpg');
 const mode = process.env.MODE || 'PUBLIC';
@@ -117,10 +117,10 @@ const herokuapi = process.env.HEROKU_API;
 const dev = process.env.DEV || '254114018035'
  const DevDreaded = dev.split(",");
     const badwordkick = process.env.BAD_WORD_KICK || 'FALSE';
-   const bad = process.env.BAD_WORD || 'fuck';
+   const bad = process.env.BAD_WORD || 'asdfghjkl';
 const botname = process.env.BOTNAME || "DREADED-MD";
 
-    const autorecordtypegc = process.env.RECORDING_TYPINGGC || 'TRUE';
+    const autorecordtypegc = process.env.RECORDING_TYPINGGC || 'FALSE';
     const autoreaddm = process.env.AUTOREAD || 'TRUE';
 const antibot = process.env.ANTIBOT || 'FALSE';
 const antitag = process.env.ANTITAG || 'FALSE';
@@ -442,29 +442,6 @@ return;
 
 
 
-
-
-const trimmedBody = body.trim();
-
-if (
-    body.startsWith(prefix) &&
-    !commandNam.some(name => {
-        const userInput = trimmedBody.substring(prefix.length).toLowerCase().trim();
-
-        return userInput.includes(name.toLowerCase());
-    })
-) {
-    await sendReact("❌");
-    await m.reply(`Wrong command. Type ${prefix}menu to see the help list, eh?`);
-    return;
-}
-/* const trimmedBody = body.trim();
-
- if (body.startsWith(prefix) && !commandNam.some(name => trimmedBody.substring(prefix.length).toLowerCase().startsWith(name))) {
-    await sendReact("❌");
-    await m.reply(`Wrong command, Type ${prefix}menu to see the help list eh?`);
-    return;
-} */
 
 
 
